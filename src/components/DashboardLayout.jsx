@@ -1,8 +1,8 @@
 "use client";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
-import SideBar from "./Sidebar";
-import TopBar from "./Topbar";
+import SideBar from "./SideBar";
+import TopBar from "./TopBar";
 
 export default function DashboardLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
