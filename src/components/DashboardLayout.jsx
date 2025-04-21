@@ -36,11 +36,7 @@ export default function DashboardLayout({ children }) {
         />
       )}
       <Box sx={{ flexGrow: 1, width: "100%", minHeight: "100vh" }}>
-        <TopBar
-          onMenuClick={handleMenuToggle}
-          toggleMini={toggleMini}
-          sidebarOpen={sidebarOpen}
-        />
+        <TopBar onMenuClick={handleMenuToggle} />
         <Box sx={{ width: "100%", height: "100vh" }}>{children}</Box>
       </Box>
     </Box>
