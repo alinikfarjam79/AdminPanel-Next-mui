@@ -2,7 +2,7 @@
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
 import SideBar from "./SideBar";
-import TopBar from "./TopBar";
+import TopBar from "./TopBaar";
 
 export default function DashboardLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
