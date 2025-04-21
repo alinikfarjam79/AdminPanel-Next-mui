@@ -12,7 +12,7 @@ import Brightness4Icon from "@mui/icons-material/Brightness4";
 import { useCustomTheme } from "@/context/themeContext";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 
-export default function TopBar({ onMenuClick, toggleMini, sidebarOpen }) {
+export default function TopBar({ onMenuClick }) {
   const { mode, toggleTheme } = useCustomTheme();
   const theme = useTheme();
 
