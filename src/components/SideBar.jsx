@@ -11,6 +11,7 @@ import {
   Divider,
   Toolbar,
   ListItemButton,
+  Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import DashboardIcon from "@mui/icons-material/Dashboard";
@@ -139,6 +140,20 @@ export default function SideBar({ open, onClose, isMini, toggleMini }) {
           );
         })}
       </List>
+      {!isMini && (
+        <Box className="flex items-center justify-center mt-96">
+          <Typography>
+            developed by{" "}
+            <a
+              href="https://github.com/alinikfarjam79/AdminPanel-Next-mui"
+              target="_blank"
+              className="text-blue-700"
+            >
+              Alinikfarjam
+            </a>
+          </Typography>
+        </Box>
+      )}
     </Box>
   );
 
