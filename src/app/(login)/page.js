@@ -3,6 +3,8 @@ import { useUser } from '@/context/userContext';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
+import { FaRegCopy } from "react-icons/fa";
+
 import {
   Box,
   Button,
@@ -18,7 +20,8 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-
+  // const exampleEmail = 'example@gmail.com';
+  // const examplePass = '123456';
   const { user, setUser } = useUser();
 
   const handleSubmit = async (e) => {
@@ -55,6 +58,15 @@ export default function LoginPage() {
       setEmail('');
       setPassword('')
 
+    }
+  };
+  const handleCopy = async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      toast.info('Copied!')
+
+    } catch (err) {
+      console.error("خطا در کپی متن:", err);
     }
   };
 
@@ -130,7 +142,7 @@ export default function LoginPage() {
               margin: 'auto'
             }}
           >
-            <Box textAlign="center" sx={{}}>
+            <Box textAlign="center" sx={{}} className='animate-pulse' >
               <Typography variant="h6" fontWeight="bold" color="white" gutterBottom>
                 Test Account
               </Typography>
@@ -152,9 +164,10 @@ export default function LoginPage() {
                 }}
               >
                 <Typography variant="caption" color="black">Email:</Typography>
-                <Typography fontFamily="monospace" color="black" mb={1}>example@gmail.com</Typography>
+                <Box display={'flex'} gap={'21px'}><Typography fontFamily="monospace" color="black" mb={1}>example@gmail.com</Typography><FaRegCopy className='text-black cursor-pointer text-xl' onClick={() => handleCopy('example@gmail.com')} /></Box>
                 <Typography variant="caption" color="black">Password:</Typography>
-                <Typography fontFamily="monospace" color="black">123456</Typography>
+                <Box display={'flex'} gap={'21px'}><Typography fontFamily="monospace" color="black" mb={1}>123456</Typography><FaRegCopy className='text-black cursor-pointer text-xl' onClick={() => handleCopy('123456')} /></Box>
+
               </Box>
             </Box>
           </Grid>
